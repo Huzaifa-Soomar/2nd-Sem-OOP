@@ -11,12 +11,19 @@ class StripeGateway : public PaymentGateway{
     bool pay(double amount) override{
         if (amount > 1000)
         {
-            cout << "Payment of $" << amount  <<  " using Stripe: Failed \n";
+            //cout << "Payment of $" << amount  <<  " using Stripe: Failed \n";
             return false;
         }else{
-            cout << "Payment of $" << amount  <<  " using Stripe: Success \n";
+           // cout << "Payment of $" << amount  <<  " using Stripe: Success \n";
             return true;
         }
+        if (pay)
+        {
+            cout << "Payment of $" << amount  <<  " using Stripe: Success \n";
+        }else{
+            cout << "Payment of $" << amount  <<  " using Stripe: Failed \n";
+        }
+        
         
     }
 
